@@ -1,28 +1,26 @@
-const Mongoose = require('mongoose');
+var oMakgoli = require('./schema/makgoli');
 
-const MakgoliSchema = Mongoose.Schema({
-    
-    title : String,		
-	food_suggestion : String,
-	brewery : {
-		title : String,
-		states : String,
-		address : String,
-		phone : String,
-		website : String,
+const Makgoli = {
+  getMakgoliList(){
+    var oResult =  oMakgoli.find({}, (error, data) => {
+      return data;
+    });
+    return oResult;
+  },
+  addMakgoli(oMakgoliData){
+    var oNewMakgoli = new oMakgoli(oMakgoliData.input);  
+    var oResult = oNewMakgoli.save().then((data) => {return data['_id']});
+    return oResult;
+  },
+  addMakgoliDetail(oMakgoliData){
+    var sId = oMakgoliData._id;
+    oMakgoli.findByIdAndUpdate(sId , {$set :oMakgoliData.input},  { new: true }, function (error, data) {
+      if (error) {
+      	return handleError(error);
+      }
+      res.send(data);
+    });
+  }
+}
 
-	},
-	product : {
-		image : String,
-		is_sterilized : Boolean, 
-		description : String,
-		alcohol_content : String,
-		awards : String,
-		ingredient : String,
-		}
-	}
-);
-
-const Makgoli  = Mongoose.model('makgoli', MakgoliSchema);
-
-module.exports = Makgoli;
+module.exports =  Makgoli; 
