@@ -19,8 +19,8 @@ const aMakgoli = [
 	        place : ['seoul restaurant','seoul bar'],
 	        rating : 4.5,
 	        sweetness : 3,
-
-}];
+	}
+];
 
 
 mongoose.connect('mongodb://localhost/makgoli' ,  { useNewUrlParser: true });
