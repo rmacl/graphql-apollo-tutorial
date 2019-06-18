@@ -15,10 +15,10 @@ const aMakgoli = [
 		ingredient : 'rice, sticky rice, sucralose, aspartame',
 		author : 'googoo@gmail.com',
 		is_claimed : false,
-	    updated : '',
-	    place : ['seoul restaurant','seoul bar'],
-	    rating : 4.5,
-	    sweetness : 3,
+	        updated : '',
+	        place : ['seoul restaurant','seoul bar'],
+	        rating : 4.5,
+	        sweetness : 3,
 
 }];
 
