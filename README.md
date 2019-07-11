@@ -107,7 +107,7 @@ node data.js
 
 Now, we need type definition and resolver to pass as parameter to an instance of Apollo Server. Remeber you define your field resolvers separately from the schema
 
-```
+```javascript
 // graphql/schema/makgoli.js
 
 const typeDefinitions = `
@@ -165,7 +165,7 @@ module.exports = [typeDefinitions];
 
 a collection of functions that are called to actually execute these fields is here
 
-```
+```javascript
 
 //  graphql/resolver.js
 const resolveFunctions = {
@@ -198,7 +198,7 @@ What we need to do is pretty simple :
 
 All goes in here 
 
-```
+```javascript
 //  app/makgoli.js
 const express = require('express');
 const bodyParser = require('body-parser');
